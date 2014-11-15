@@ -4,7 +4,7 @@ supportedCurrencies <- c("CNY","EUR","RUB","USD", "JPY")
 
 
 shinyUI(fluidPage(
-  titlePanel("Visualize Rates"),
+  titlePanel("visualizeFXrates"),
   
   sidebarLayout(
     sidebarPanel(width = 3,
@@ -20,7 +20,8 @@ shinyUI(fluidPage(
                           "Buy:", supportedCurrencies,
                           selected = "CNY", width=120))),
       dateRangeInput("dates", "Date range:", 
-                     start = "2014-01-01", end = as.character(Sys.Date()))
+                     start = "2014-01-01", end = as.character(Sys.Date())),
+      a("Click here for user guide.", href="http://rpubs.com/jeckley/currXuserGuide")
     ),
     tabsetPanel(position="below", type="pills",
         tabPanel("Exchange Rate",
